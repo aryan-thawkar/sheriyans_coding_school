@@ -11,7 +11,7 @@ console.log(arr);
 let arr1 = new Array(4);
 console.log(arr1);
 
-
+// min and max element of array
 
 arr = [10, 56, 59, 85, 74, 62, 53, 95, 85, 32, 55, 6];
 let max = arr[0];
@@ -31,3 +31,28 @@ for (let i = 1; i < arr.length; i++) {
 }
 console.log("max = " + max);
 console.log("min = " + min);
+
+
+// second largest element of array
+
+max = arr[0];
+let secondMax = arr[0];
+for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        secondMax = max;
+        max = arr[i];
+
+    }
+}
+
+for (let i = 1; i < arr.length; i++) {
+    if(arr[i] === max){
+        continue;
+    }
+    if (arr[i] > max) {
+        secondMax = arr[i];
+
+    }
+}
+
+console.log(`Second largest = ${secondMax}`);

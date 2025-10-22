@@ -15,8 +15,16 @@ for(let i = 2 ; i < arr.length ; i++){
         sMax = max;
         max = arr[i];
     }else if (arr[i] > sMax){
-        sMax = arr[i];
+        if(arr[i] != max){
+
+            sMax = arr[i];
+        }
     }
 }
 
 console.log(sMax)
+
+
+
+
+// 

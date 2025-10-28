@@ -1,13 +1,47 @@
+const prompt = require('prompt-sync')();
 // left shift array by k elements (by brute force)
 
-let arr = [1,2,3,4,5];
+let arr = [1, 2, 3, 4, 5];
 let k = 3;
-for(let j = 1 ; j<=k; j++){
+k = k % arr.length;
+for (let j = 1; j <= k; j++) {
     let copy = arr[0];
-    for(let i = 0 ; i< arr.length ; i++){
-        arr[i] = arr[i+1];
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i + 1];
     }
-    arr[arr.length-1] = copy
+    arr[arr.length - 1] = copy
 
 }
 console.log(arr);
+
+
+// left shift array by k elements (not space efficient)
+arr = [1, 2, 3, 4, 5];
+let temp = new Array(arr.length)
+k = 5;
+k = k % arr.length;
+for (let i = 0; i < arr.length; i++) {
+    temp[i] = arr[(i + k) % arr.length];
+}
+console.log(temp)
+
+
+// left shift array by k elements(block swap reverse algorithm)
+
+arr = [1,2,3,4,5];
+k = Number(prompt("Enter a number : "));
+k  = k % arr.length;
+reverse(arr , 0 , k-1);
+reverse(arr , k , arr.length-1);
+reverse(arr , 0 , arr.length-1);
+console.log(arr);
+function reverse (arr ,i , j ){
+    while(i<j){
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+
+    }
+}

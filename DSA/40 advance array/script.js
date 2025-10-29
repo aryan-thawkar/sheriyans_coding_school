@@ -45,3 +45,25 @@ function reverse (arr ,i , j ){
 
     }
 }
+
+let abc = [1,2,3,4,5,6,7,8,9];
+
+
+
+// linear search
+
+arr = [23,56,85,74,8,45,95,36,85];
+let target = Number(prompt("Enter Target value :"))
+let index = -1;
+for(i = 0 ; i< arr.length; i++){
+    if (arr[i] == target){
+        index = i ;
+        break;
+    }
+}
+if(index != -1){
+    console.log(`element found at ${index} index`);
+}
+else{
+    console.log("element not found");
+}

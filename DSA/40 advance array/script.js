@@ -67,3 +67,23 @@ if(index != -1){
 else{
     console.log("element not found");
 }
+
+
+// binary search
+
+arr = [11,12,13,14,15,16,17,18,19,20];
+function binarySearch(arr , target){
+    let s = 0;
+    let e = arr.length - 1;
+    while (s<=e) {
+        let mid = Math.floor((s+e)/2);
+        if(arr[mid] == target) return mid;
+        else if (arr[mid] > target) e = mid - 1;
+        else s = mid + 1;
+    }
+    return -1
+}
+
+// target = Number(prompt("Enter Target value :"))
+ if(binarySearch(arr , 15) === -1) console.log("not found");
+ else console.log("element found ")

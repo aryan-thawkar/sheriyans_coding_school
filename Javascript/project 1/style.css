@@ -1,0 +1,309 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: General Sans;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#minicircle {
+  transition: none;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 9999;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+#main {
+  width: 100%;
+}
+#main #hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+#main #hero #nav {
+  padding: 20px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main #hero #nav a {
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+#main #hero #nav a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  transition: width 0.3s ease;
+}
+#main #hero #nav a:hover::before {
+  width: 100%;
+}
+#main #hero #heading {
+  margin-top: 90px;
+}
+#main #hero #heading .bounding {
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+}
+#main #hero #heading .bounding .boundingelem {
+  transform: translateY(100%);
+}
+#main #hero #heading h1 {
+  margin-left: 40px;
+  opacity: 0.6;
+  line-height: 1;
+  font-family: "General Sans Medium";
+  font-size: 9vw;
+  text-transform: uppercase;
+}
+#main #hero #heading .blocktext {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#main #hero #heading .blocktext h5 {
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+#main #hero #heading #secondh1 {
+  margin-left: 230px;
+}
+#main #hero #subheading {
+  margin-top: 100px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#main #hero #subheading h5 {
+  text-align: right;
+  text-transform: uppercase;
+  margin-top: 0.5vw;
+  font-size: 1vw;
+}
+#main #hero #herofooter {
+  padding: 0 2vw;
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#main #hero #herofooter a {
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+#main #hero #herofooter a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+#main #hero #herofooter a:hover::after {
+  width: 100%;
+}
+#main #hero #herofooter #iconset {
+  display: flex;
+  gap: 5px;
+}
+#main #hero #herofooter #iconset .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: #888;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#main #hero #herofooter #iconset .circle:hover {
+  background-color: white;
+  transform: scale(1.2) rotate(180deg);
+}
+#main #hero #herofooter #iconset .circle:hover i {
+  color: black;
+}
+#main #second {
+  padding-right: 5vw;
+  padding-top: 200px;
+  width: 100%;
+  height: 100vh;
+}
+#main #second .elemlast {
+  border-bottom: 1px solid #888;
+}
+#main #second .elem {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #888;
+  padding: 2vw 1vw;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#main #second .elem img {
+  position: absolute;
+  z-index: 999;
+  height: 140%;
+  opacity: 0;
+  pointer-events: none;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+#main #second .elem:hover img {
+  filter: grayscale(0%);
+}
+#main #second .elem h1 {
+  text-transform: uppercase;
+  font-size: 7.6vw;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#main #second .elem:hover h1 {
+  opacity: 1;
+  transform: translateX(20px);
+}
+#main #about {
+  width: 100%;
+  padding: 12vw 5vw;
+  padding-left: 40vw;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  overflow: hidden;
+}
+#main #about img {
+  width: 200px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+#main #about img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+#main #about #textabout {
+  width: 30rem;
+}
+#main #about #textabout h5 {
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+#main #about #textabout p {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+#main #about #textabout a {
+  padding: 12px 22px;
+  border: 1px solid white;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+#main #about #textabout a:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+#main #subscribe {
+  padding: 20px 30px;
+  padding-bottom: 10vw;
+  transition: transform 0.3s ease;
+}
+#main #subscribe:hover {
+  transform: translateX(10px);
+}
+#main #subscribe h5 {
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+#main #subscribe h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+#main #subscribe h3:hover {
+  color: #888;
+}
+#main #footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 30px;
+  border-top: 1px solid #333;
+}
+#main #footer #left {
+  display: flex;
+  gap: 20px;
+}
+#main #footer #left h5 {
+  opacity: 0.6;
+}
+#main #footer #right {
+  display: flex;
+  gap: 20px;
+}
+#main #footer #right a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+#main #footer #right a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+#main #footer #right a:hover::after {
+  width: 100%;
+}
+#main #footer #right a:hover {
+  color: #888;
+}/*# sourceMappingURL=style.css.map */
